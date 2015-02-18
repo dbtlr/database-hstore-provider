@@ -22,7 +22,7 @@ class HStoreServiceProvider implements ServiceProviderInterface
         Type::addType('hstore', 'Intaro\HStoreBundle\DBAL\Types\HStoreType');
 
         /** @var \Doctrine\DBAL\Connection $db */
-        $db = $this['db'];
+        $db = $app['db'];
         $db->getDatabasePlatform()->registerDoctrineTypeMapping('hstore', 'hstore');
     }
 
